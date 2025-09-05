@@ -1,0 +1,77 @@
+main {
+    height: 60%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main button {
+    padding: 10px 30px;
+    margin: 5px 15px;
+
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+    border: 0;
+    font-weight: bold;
+}
+
+main button, input[type=button], input[type=reset   ] {
+    padding: 10px 30px;
+    margin: 5px 15px;
+
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+    border: 0;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: brown;
+    cursor: pointer;
+}
+.btnDiv > input:hover {
+    background-color: brown;
+    cursor: pointer;
+}
+
+.btnDiv {
+    display: flex;
+}
+
+.inputDiv {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+/* 속성 셀렉터 (해당 태그의 속성을 입력) */
+input[type=text] {
+    padding: 8px;
+    margin: 10px;
+    text-align: center;
+}
+
+input[readonly] {
+    background-color: beige;
+}
+
+#msg {
+    width: 80%;
+    height: 80px;
+    margin: 20px;
+    border: 1px solid rgb(54,54,79);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: large;
+    font-weight: bold;
+}
+
+#msg > span {
+    color: brown;
+}

@@ -9,13 +9,22 @@
 
 <body>
     <header>
-        <h1><span>자바스크립트 기초</span></h1>
+        <h1><span>자바스크립트 문자열 예제</span></h1>
     </header>
     <main>
-        <div class="btnDiv">
-            <button onclick="Hello('1')">인사1</button>
-            <button onclick="Hello('2')">인사2</button>
-            <button onclick="CheckVar()">var 변수</button>
+        <form>
+            <div class="inputDiv">
+                <input type="text" name="txt1" id="txt1" placeholder="문자열을 입력하세요.">
+                <input type="text" name="txt2" id="txt2" readonly>
+            </div>
+            <div class="btnDiv">
+                <input type="button" onclick="btnCheck()" value="회문확인">
+                <input type="button" onclick="btnAdd()" value="숫자합계">
+                <input type="reset" onclick="btnCancle()" value="취소">
+            </div>
+        </form>
+        <div id="msg">
+            
         </div>
     </main>
     <footer>
@@ -25,15 +34,7 @@
     </footer>
 </body>
 
-<!-- 내부 코드 -->
-<!-- <script>
-    function hello() {
-        alert("Hello World!!!");
-    }    
-</script> -->
-
-<!-- 외부 코드 -->
-<script src="./script/03.js"></script>
+<script src="./script/04.js"></script>
 <link rel="stylesheet" href="../style/index.css">
 <link rel="stylesheet" href="../style/js.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"

@@ -1,0 +1,68 @@
+header h1 {
+    display: inline-flex;
+}
+
+header nav {
+    float: right;
+    margin-top: 10px;
+}
+
+header ul {
+    display: flex;  
+    align-items: center;
+    
+}
+
+header li a {
+    margin: 20px;
+    color: beige;
+}
+
+main {
+    height: 80%;
+}
+
+#name, #msg {
+    width: 80%;
+    height: 80px;
+    margin: 20px;
+    border: 1px dotted rgb(54,54,79);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: large;
+    font-weight: bold;
+}
+
+#name {
+    background-color: lightblue;
+}
+
+#content1 {
+    width: 80%;
+    height: 35vh;
+    border: 1px dotted rgb(54,54,79);
+}
+
+#diceDiv, #btDiv {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#diceDiv > div {
+    text-align: center;
+    margin:2em;
+}
+
+#btDiv {
+    height: 10%;
+}
+
+#btDiv > button {
+    padding: 10px;
+    width: 60px;  
+    margin: 5px;
+}

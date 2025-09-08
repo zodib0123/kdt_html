@@ -1,0 +1,72 @@
+header h1 {
+    display: inline-flex;
+}
+
+header nav {
+    float: right;
+    margin-top: 10px;
+}
+
+header ul {
+    display: flex;  
+    align-items: center;
+    
+}
+
+header li a {
+    margin: 20px;
+    color: beige;
+}
+
+#spDiv {
+    width: 80%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 40px;
+}
+
+#spDiv > span {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 60px;
+    height: 60px;
+
+    margin: 5px;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.sp0{
+    background-color: aqua;
+    color: white;
+}
+
+.sp1{
+    background-color: goldenrod;
+    color: white;
+}
+
+.sp2{
+    background-color: darkgreen;
+    color: white;
+}
+
+.sp3{
+    background-color: brown;
+    color: white;
+}
+
+.sp4{
+    background-color: darkblue;
+    color: white;
+}
+
+.spplus{
+    color: black;
+    font-size: 25px;
+}

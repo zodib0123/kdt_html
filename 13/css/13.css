@@ -1,10 +1,17 @@
 #boxMain {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: start;
-  align-items: center;
+  align-items: left;
 
   height: 600px;
+}
+
+#boxChat {
+  width: 50%;
+}
+#boxPoster {
+  width: 50%;
 }
 
 #inDt {
@@ -15,9 +22,46 @@
 }
 
 #dt {
-  width: 50%;
+  width: 70%;
   padding: 5px;
   margin: 10px;
 
   font-weight: bold;
+}
+
+#content {
+  width: 100%;
+}
+
+.boxli {
+  display: flex;
+  font-size: 15px;
+}
+
+.boxli p {
+  width: 25px;
+  height: 25px;
+  text-align: center;
+
+  margin: 0px 5px;
+
+  background-color: blue;
+  border-radius: 20%;
+  color: white;
+}
+
+.boxli span {
+  width: 40px;
+  height: 25px;
+  text-align: center;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 10px;
+  padding: 5px;
+}
+
+.boxli i {
+  padding-right: 5px;
 }

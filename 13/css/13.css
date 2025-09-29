@@ -65,3 +65,14 @@
 .boxli i {
   padding-right: 5px;
 }
+
+#boxPoster {
+  width: 50%;
+  padding: 20px;
+}
+
+#poster > img {
+  object-fit:contain;
+  width: 100%;
+  
+}

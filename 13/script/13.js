@@ -1,12 +1,12 @@
 // 어제 날짜 가져오기
 const getYesterday = () => {
   const yesterday = new Date();
-  yesterday.setDate(yesterday.getDate() -1);
+  yesterday.setDate(yesterday.getDate() - 1);
 
   // let year = String(yesterday.getFullYear());   // 년도 4자리
   // let month = String(yesterday.getMonth() + 1).padStart(2, '0'); // 월 1 ~ 12
   // let day = String(yesterday.getDate());         // 일 1 ~ 31
-  
+
   // return (year + "-" + month + "-" + day);
 
   // ISO 형식 (예: 2025-09-22 09:00:00.000Z)
@@ -16,7 +16,7 @@ const getYesterday = () => {
 const rankInten = (item) => {
   let result;
   if (item < 0) {
-    result = `<i class="fa-solid fa-caret-down" style="color: #ff0026;"></i>${item * (-1)}`;  
+    result = `<i class="fa-solid fa-caret-down" style="color: #ff0026;"></i>${item * (-1)}`;
   } else if (item > 0) {
     result = `<i class="fa-solid fa-caret-up" style="color: #055ffa;"></i>${item}`;
   } else {
@@ -24,6 +24,27 @@ const rankInten = (item) => {
   }
   return result;
 }
+
+// 포스터 가져오기
+const getPoster = (title) => {
+  let boxPoster = document.querySelector('#poster');
+  let apikey = 'b18e798ff377ef49f1c335283e7c43d6';
+  let url = `https://api.themoviedb.org/3/search/movie?api_key=${apikey}&query=${title}`;
+
+  //console.log(url);
+  fetch(url)
+    .then(resp => resp.json())
+    .then(data => {
+      const imgsrc = data.results[0].poster_path;
+      //console.log(imgsrc);
+      boxPoster.innerHTML = `<img src='https://image.tmdb.org/t/p/w500${imgsrc}' alt="${imgsrc}">`;
+    })
+    .catch(err => {
+      //console.log("error 발생");
+      boxPoster.innerHTML = `<img src='../img/not_found.jpg'>`;
+});
+}
+
 
 // 박스오피스 가져오기
 const getData = (gdt, box) => {
@@ -36,13 +57,12 @@ const getData = (gdt, box) => {
     .then(data => {
       console.log(data);
       const boxs = data.boxOfficeResult.dailyBoxOfficeList;
-      let tags = boxs.map(item => `<li class="boxli"><p>${item.rank}</p><span>${rankInten(item.rankInten)}</span>${item.movieNm.slice(0, 20)}</li>`).join('');
-      box.innerHTML = tags;
+      let tags = boxs.map(item => `<li class="boxli" onclick='getPoster("${item.movieNm}")'><p>${item.rank}</p><span>${rankInten(item.rankInten)}</span>${item.movieNm.slice(0, 20)}</li>`).join('');      box.innerHTML = tags;
     })
     .catch(err => console.err(err));
 
-  
-  console.log(url);
+
+  // console.log(url);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -61,4 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 초기 박스오피스 가져오기
   getData(dt.value.replaceAll('-', ''), box);
+
+  
 });
